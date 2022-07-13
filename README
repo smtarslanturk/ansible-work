@@ -2,4 +2,4 @@ Codes:
 git config --global --add safe.directory /home/elliot/ansible-work
 
 ansible all --key-file ~/.ssh/id_rsa -i inventory -m ping
-
+ansible all -m ping
