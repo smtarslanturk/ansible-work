@@ -2,4 +2,23 @@ Codes:
 git config --global --add safe.directory /home/elliot/ansible-work
 
 ansible all --key-file ~/.ssh/id_rsa -i inventory -m ping
-ansible all -m ping
+ansible all -m ping.  //yukaridakiyle aynidir. ansible.cfg dosyasini ayarladiktan sonra bilgileri default .cfgden ceker. 
+
+ansible all -i inventory --list-hosts   //inventorydeki hostlari listeler. 
+ansible prod -i inventory --list-hosts = ansible prod --list-hosts
+ansible ungrouped --list-hosts  //herhangi bir gruba atamasi yapilamamis hostlari listeler. 
+
+wc -l ansible.cfg  //kac satir oldugunu gosterir. 
+
+/etc/ansible/ansible.cfg    //bu klasor altinda bir cok konfigurasyon bilgisiyle alakali bilgi vardir. 
+
+Running Ad­Hoc Commands in Ansible
+ansible host_pattern -m module_name -a ”module_options”
+
+ansible prod -m command -a "uptime"
+ansible prod -m command -a "pwd"
+
+ansible-doc -l | wc -l
+3387
+
+ansible node2 -m shell -a "lscpu | head -n 5"
