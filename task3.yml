@@ -1,0 +1,19 @@
+---
+- name: install tmux and create archive with tag
+  hosts: node2
+  become: true
+  gather_facts: no
+  tasks:
+    - name: update 
+      apt:
+        update_cache: yes
+    - name: install tmux 
+      package: 
+        name: tmux
+      tags: tmux 
+    - name: create archive 
+      archive:
+        path: /var/log
+        dest: /tmp/log/ansible.zip
+        format: zip
+      tags: archive

@@ -22,3 +22,23 @@ ansible-doc -l | wc -l
 3387
 
 ansible node2 -m shell -a "lscpu | head -n 5"
+
+ansible windows -m win_ping //windows makineyi pingler. 
+ansible-playbook windows windows-playbook.yml  //calsimadi. 
+ansible windows -m win_reboot //windows makineyi resstat eder
+
+ansible node1 -m raw -a "cat /etc/os-release" 
+ansible node1 -m raw -a "pwd"
+
+
+ansible-inventory --list | jq "keys"
+
+ansible-playbook first-playbook.yml
+
+ansible-playbook --check task2.yml
+ansible-playbook --list-hosts task2.yml 
+ansible-playbook --list-tasks task2.yml 
+ansible-playbook task3.yml --tags tmux     -> Sadece tsgsı tmux olan kısmı calıstırır. 
+
+
+
