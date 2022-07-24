@@ -38,7 +38,10 @@ ansible-playbook first-playbook.yml
 ansible-playbook --check task2.yml
 ansible-playbook --list-hosts task2.yml 
 ansible-playbook --list-tasks task2.yml 
+ansible-playbook tasks/task4.yml 
 ansible-playbook task3.yml --tags tmux     -> Sadece tsgsı tmux olan kısmı calıstırır. 
+
+NOT: ansible.cfg dosyasini duzgun sekilde ayarladiktan sonra playbook icerisine become parametrelerini yazmaya gerek yok. 
 
 
 
